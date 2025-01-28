@@ -4,7 +4,7 @@
 #include <pthread.h>
 #include <sys/stat.h>
 #include <unistd.h>
-#include <string.h> // Include for strlen
+#include <string.h>
 
 #define CTOS "clientToServer"
 #define STOC "serverToClient"
@@ -18,10 +18,10 @@ void* serverWrites() {
         int fd = open(STOC, O_WRONLY);
         if (fd == -1) {
             perror("open STOC");
-            continue; // Try again in the next iteration
+            continue; 
         }
 
-        write(fd, buffer, strlen(buffer) + 1); // Write including null terminator
+        write(fd, buffer, strlen(buffer) + 1); 
         close(fd);
     }
     return NULL;
