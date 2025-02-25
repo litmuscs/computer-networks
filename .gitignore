@@ -1,3 +1,2 @@
-hdc
-hdserver
-
+!*.c
+!Makefile
