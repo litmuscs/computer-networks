@@ -6,7 +6,7 @@ using namespace std;
 int main()
 {
     string input, output;
-    int oneCounter = 0;
+    int oneCounter = 0, foundZero = 0;
     cout << "Enter encoded bit sequence: ";
     getline(cin, input);
     int sizeOfInput = input.length();
@@ -20,7 +20,8 @@ int main()
         }
         else if (c == '0')
         {
-            if (oneCounter == 5)
+
+            if (oneCounter == 5 && foundZero)
             {
                 continue;
             }
@@ -29,6 +30,7 @@ int main()
                 output += c;
                 oneCounter = 0;
             }
+            foundZero = 1;
         }
     }
     cout << "Decoded output: " << output << endl;
