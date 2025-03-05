@@ -47,14 +47,11 @@ string generateBlockParity(string input){
     return output;
 }
 int main(){
-    int rows;
-    string input;
-    cout<<"Enter the number of rows: ";
-    cin>>rows;
-    cout<<"Enter your binary data: ";
+    cout<<"Enter your binary data in multiples of 7: ";
+string input;
     cin>>input;
-    if(input.length()!=(7*rows)){
-        cerr<<"Wrong data length entered. Expected "<<(7*rows)<<", got "<<input.length()<<endl;
+    if((input.length()%7)!=0){
+        cerr<<"Wrong data length entered. Expected multiple of 7, got "<<input.length()<<endl;
         exit(-1);
     }
     string parityBlock=generateBlockParity(input);
